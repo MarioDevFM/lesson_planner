@@ -1,0 +1,58 @@
+# Virtuelle Umgebung und Python-Artefakte
+.venv/
+.uv-cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Zugangsdaten und lokale Konfiguration
+.env
+.env.*
+!.env.example
+.envrc
+.direnv/
+secrets/*
+!secrets/.gitkeep
+credentials*.json
+token*.json
+*credentials*.json
+*secret*.json
+*.pem
+*.key
+*.p12
+*.pfx
+/secrets/
+.vscode/
+
+
+# Unterrichtsinhalte und generierte Ergebnisse
+data/*
+!data/example_history.txt
+!data/plans/
+data/plans/*
+!data/plans/.gitkeep
+*.log
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+
+
+# Google Calendar API
+renewer_google_api.py
+calendar_reader.py
+
+# Google Calendar Folder
+.google_calendar/
+/src/google_calendar/
+
+
+
+/unterrichtsplan-komponenten.puml
+/output_verbesserung.md.md

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unterrichtsplan-agent"
+version = "0.1.0"
+description = "A constrained workflow for lesson planning"
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "google-api-python-client>=2.200.0",
+    "google-auth>=2.58.0",
+    "google-auth-oauthlib>=1.4.1",
+    "langchain>=1.4.2",
+    "langchain-openai>=1.6.2",
+    "notion-client>=2.2.0",
+    "python-dotenv>=1.1,<2",
+    "requests>=2.32,<3",
+]
+
+[project.scripts]
+unterrichtsplan = "unterrichtsplan.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

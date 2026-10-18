@@ -1,0 +1,83 @@
+name: Weekly Lesson Plan
+
+on:
+  schedule:
+    - cron: "0 17 * * 3"
+      timezone: "Europe/Berlin"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-lesson-plan
+  cancel-in-progress: false
+
+jobs:
+  create-and-send-plan:
+    name: Create and send lesson plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: production
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          enable-cache: true
+          version: "0.12.19"
+
+      - name: Install Python
+        run: uv python install 3.14
+
+      - name: Install locked dependencies
+        run: uv sync --locked --no-dev
+
+      - name: Validate required secrets
+        shell: bash
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
+          GOOGLE_CALENDAR_EVENT_ID: ${{ secrets.GOOGLE_CALENDAR_EVENT_ID }}
+          GOOGLE_CALENDAR_REFRESH_TOKEN: ${{ secrets.GOOGLE_CALENDAR_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          MAIL: ${{ secrets.MAIL }}
+          MAIL_PW: ${{ secrets.MAIL_PW }}
+          RECEIVER_MAIL: ${{ secrets.RECEIVER_MAIL }}
+        run: |
+          required=(
+            OPENAI_API_KEY
+            GOOGLE_CALENDAR_ID
+            GOOGLE_CALENDAR_EVENT_ID
+            GOOGLE_CALENDAR_REFRESH_TOKEN
+            GOOGLE_CLIENT_ID
+            GOOGLE_CLIENT_SECRET
+            MAIL
+            MAIL_PW
+            RECEIVER_MAIL
+          )
+          for name in "${required[@]}"; do
+            if [[ -z "${!name}" ]]; then
+              echo "::error::Required GitHub secret is missing: ${name}"
+              exit 1
+            fi
+          done
+
+      - name: Run lesson planner
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
+          GOOGLE_CALENDAR_EVENT_ID: ${{ secrets.GOOGLE_CALENDAR_EVENT_ID }}
+          GOOGLE_CALENDAR_REFRESH_TOKEN: ${{ secrets.GOOGLE_CALENDAR_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          MAIL: ${{ secrets.MAIL }}
+          MAIL_PW: ${{ secrets.MAIL_PW }}
+          RECEIVER_MAIL: ${{ secrets.RECEIVER_MAIL }}
+        run: uv run python -m unterrichtsplan
