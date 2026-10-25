@@ -1,0 +1,222 @@
+version: 1
+name: Guitar Games - Teaching Activity Collection
+language: en
+purpose: "A varied collection of customizable games for individual and group guitar lessons. The games complement curriculum.yaml and do not replace the competency-based learning path."
+selection_rules:
+  - "Choose games that match the selected skill_ids and the observed skill level."
+  - "Use no more than two games as lesson priorities; practical music-making remains central."
+  - "Prefer mechanics not used during the previous two lessons."
+  - "Use competition only voluntarily, without elimination or embarrassment."
+  - "Differentiate within groups without overwhelming less advanced students."
+  - "Keep instructions short: explain, demonstrate, and try together."
+  - "Use mastery checks as observation aids, not rigid grades."
+  - "Adapt tempo, repetitions, and difficulty to the student's condition that day."
+fields:
+  skill_ids: References to IDs in curriculum.yaml
+  formats: Individual or group lessons
+  mechanics: Game principle used to avoid monotonous repetition
+  duration_minutes: Recommended duration without an extended warm-up
+  levels: Differentiation for easier and more challenging variants
+  mastery_check: Observable learning progress during the game
+
+games:
+  - id: saiten_safari
+    title: String Safari
+    module_ids: [m1]
+    skill_ids: [m1_saitennamen, m1_wechselschlag]
+    formats: [individual, group]
+    mechanics: scavenger_hunt
+    duration_minutes: 7
+    goal: Match string names and deliberately play individual open strings.
+    instructions: "Call out a string or show its card; each correct string advances along a short sound route."
+    mastery_check: Correctly finds at least five of six named strings.
+  - id: stimm_spurensuche
+    title: Tuning Investigation
+    module_ids: [m1]
+    skill_ids: [m1_stimmen, m1_saitennamen]
+    formats: [individual, group]
+    mechanics: detective_game
+    duration_minutes: 6
+    goal: Interpret tuner feedback and recognize small tuning differences.
+    instructions: "Compare a correctly tuned string with a slightly altered one, then retune it carefully under supervision."
+    mastery_check: Correctly interprets three of four tuner readings.
+  - id: gitarren_spiegel
+    title: Guitar Mirror
+    module_ids: [m1]
+    skill_ids: [m1_haltung]
+    formats: [individual, group]
+    mechanics: mirror_game
+    duration_minutes: 5
+    goal: Recognize relaxed posture and suitable hand positions.
+    instructions: "Mirror the teacher's posture, identify one successful detail, and check that posture stays stable for four quiet notes."
+    mastery_check: Maintains a relaxed posture across four notes.
+  - id: anschlags_labyrinth
+    title: Picking Maze
+    module_ids: [m1]
+    skill_ids: [m1_wechselschlag, m1_saitennamen]
+    formats: [individual, group]
+    mechanics: path_navigation
+    duration_minutes: 8
+    goal: Hit strings deliberately with even strokes.
+    instructions: "Follow a route of string numbers, add a steady pulse, and design a new route."
+    mastery_check: Six of eight strokes hit the correct string at the agreed tempo.
+  - id: emoji_akkordcode
+    title: Emoji Chord Code
+    module_ids: [m1, m2]
+    skill_ids: [m1_einfache_akkorde, m2_em, m2_g, m2_d]
+    formats: [individual, group]
+    mechanics: symbol_decoding
+    duration_minutes: 8
+    goal: Recall familiar chords from a nonverbal code.
+    instructions: "Assign a symbol to each known chord, play short symbol sequences, and create a new code."
+    mastery_check: Fingers four of five displayed chords correctly without help.
+  - id: akkord_domino
+    title: Chord Dominoes
+    module_ids: [m2]
+    skill_ids: [m2_dg_wechsel, m2_em, m2_c, m2_g, m2_d]
+    formats: [individual, group]
+    mechanics: card_combination
+    duration_minutes: 10
+    goal: Connect changes between familiar chords musically.
+    instructions: "Build a chain of matching chord cards and play each chord for four beats."
+    mastery_check: Completes six of eight observed chord changes in the agreed pulse.
+  - id: rhythmus_pizza
+    title: Rhythm Pizza
+    module_ids: [m2]
+    skill_ids: [m2_viertel, m2_achtel]
+    formats: [individual, group]
+    mechanics: rhythm_builder
+    duration_minutes: 9
+    goal: Combine quarter notes, eighth notes, and rests into short bars.
+    instructions: "Fill four beat positions, speak and clap the pattern, then play it on a string or chord."
+    mastery_check: Plays the four-bar pattern twice with a stable pulse.
+  - id: geister_puls
+    title: Ghost Pulse
+    module_ids: [m2, m3]
+    skill_ids: [m2_viertel, m2_achtel, m3_lagerfeuer]
+    formats: [individual, group]
+    mechanics: internal_pulse_challenge
+    duration_minutes: 6
+    goal: Maintain an internal pulse during short silences.
+    instructions: "Play four beats, continue counting silently, and restart together on beat one."
+    mastery_check: Restarts together in three of four attempts.
+  - id: soundtrack_regie
+    title: Soundtrack Director
+    module_ids: [m2, m4]
+    skill_ids: [m2_viertel, m4_palm_muting]
+    formats: [individual, group]
+    mechanics: sound_direction
+    duration_minutes: 8
+    goal: Shape volume and tone deliberately.
+    instructions: "Follow signs for quiet, strong, open, and muted playing without losing the pulse."
+    mastery_check: Performs three of four signs audibly and appropriately.
+  - id: tab_schatzkarte
+    title: Tab Treasure Map
+    module_ids: [m2]
+    skill_ids: [m2_tabs, m1_saitennamen]
+    formats: [individual, group]
+    mechanics: code_puzzle
+    duration_minutes: 9
+    goal: Translate string and fret numbers from simple tablature.
+    instructions: "Identify the strings and frets, then slowly play a four- to six-note phrase."
+    mastery_check: Correctly plays at least four of five tablature notes.
+  - id: riff_telefon
+    title: Riff Telephone
+    module_ids: [m1, m3]
+    skill_ids: [m1_erster_riff, m3_riffs]
+    formats: [individual, group]
+    mechanics: listening_chain
+    duration_minutes: 8
+    goal: Hear, remember, and pass on short note sequences.
+    instructions: "Pass a short motif from player to player by ear, then compare it with the original."
+    mastery_check: Retains the contour and at least three of four notes.
+  - id: fehler_detektiv
+    title: Error Detective
+    module_ids: [m1, m2, m3]
+    skill_ids: [m1_haltung, m2_d, m2_g, m2_dg_wechsel, m3_riffs]
+    formats: [individual, group]
+    mechanics: observation_puzzle
+    duration_minutes: 7
+    goal: Recognize sound problems and suggest constructive corrections.
+    instructions: "Compare a clean phrase with one typical problem, explain the difference, and test a correction."
+    mastery_check: Names one plausible observation and one helpful correction.
+  - id: song_navigator
+    title: Song Navigator
+    module_ids: [m2, m4]
+    skill_ids: [m2_song, m2_dg_wechsel, m4_song_komplett]
+    formats: [individual, group]
+    mechanics: song_structure
+    duration_minutes: 10
+    goal: Recognize song sections and change accompaniment patterns on time.
+    instructions: "Arrange section cards, announce each transition, and play through the complete form."
+    mastery_check: Completes three of four section changes together.
+  - id: finger_labyrinth
+    title: Finger Maze
+    module_ids: [m3]
+    skill_ids: [m3_spinne]
+    formats: [individual, group]
+    mechanics: movement_puzzle
+    duration_minutes: 7
+    goal: Coordinate fretting fingers without strain.
+    instructions: "Draw a short finger sequence and play it slowly in a comfortable fret area."
+    mastery_check: Plays a four-note sequence three times with control and relaxation.
+  - id: pentatonik_dialog
+    title: Pentatonic Dialogue
+    module_ids: [m3, m4]
+    skill_ids: [m3_pentatonik, m4_impro]
+    formats: [individual, group]
+    mechanics: musical_dialogue
+    duration_minutes: 10
+    goal: Create musical questions and answers with a small set of notes.
+    instructions: "Answer a two- to four-note phrase, swap roles, and build a dialogue."
+    mastery_check: Creates a coherent answer with a deliberate beginning and ending.
+  - id: melodie_wuerfel
+    title: Melody Dice
+    module_ids: [m3, m4]
+    skill_ids: [m3_riffs, m3_pentatonik, m4_impro]
+    formats: [individual, group]
+    mechanics: random_composition
+    duration_minutes: 9
+    goal: Develop a repeatable motif from a few notes.
+    instructions: "Assign known notes to die values, roll a sequence, and shape it into a motif."
+    mastery_check: Repeats the self-created phrase recognizably twice.
+  - id: powerchord_stadtplan
+    title: Power-Chord City Map
+    module_ids: [m4]
+    skill_ids: [m4_powerchords]
+    formats: [individual, group]
+    mechanics: position_navigation
+    duration_minutes: 9
+    goal: Move one power-chord shape safely between positions.
+    instructions: "Follow a map of two to four fret positions and repeat it as a short rock riff."
+    mastery_check: Completes two position changes three times without unwanted string noise.
+  - id: klanglabor
+    title: Sound Laboratory
+    module_ids: [m4]
+    skill_ids: [m4_palm_muting]
+    formats: [individual, group]
+    mechanics: sound_experiment
+    duration_minutes: 8
+    goal: Hear and produce the difference between open and palm-muted sounds.
+    instructions: "Compare two sounds, explore safe palm positions, and play a pattern for others to identify."
+    mastery_check: Makes four of five open or muted sounds clearly distinguishable.
+  - id: verziehrungs_zauber
+    title: Embellishment Magic
+    module_ids: [m4]
+    skill_ids: [m4_hammer_pull]
+    formats: [individual, group]
+    mechanics: sound_transformation
+    duration_minutes: 8
+    goal: Use hammer-ons and pull-offs as audible effects.
+    instructions: "Compare a picked two-note sequence with a legato version and choose an effect for a motif."
+    mastery_check: Produces at least three clearly audible embellishments in five attempts.
+  - id: mini_band_mission
+    title: Mini Band Mission
+    module_ids: [m2, m3, m4]
+    skill_ids: [m2_song, m3_lagerfeuer, m4_song_komplett]
+    formats: [group, individual]
+    mechanics: cooperative_project
+    duration_minutes: 12
+    goal: Prepare and perform a short song section together.
+    instructions: "Agree on an eight-bar goal, choose level-appropriate roles, rehearse briefly, and perform."
+    mastery_check: Completes the agreed section with a shared beginning and ending.

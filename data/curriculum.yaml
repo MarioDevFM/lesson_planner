@@ -1,0 +1,160 @@
+version: 1
+name: Guitar Lessons - From Quick Start to Band Ready
+settings:
+  duration_minutes: 60
+  max_focus_goals: 1
+  mastery_guideline: "Treat a skill as secure only when the student demonstrates it mostly independently across several attempts; use 4 successful attempts out of 5 as a guideline."
+  guidance:
+    - "Use the curriculum as guidance, not as a rigid weekly schedule."
+    - "Do not reteach mastered content from the beginning without a diagnostic reason."
+    - "For group lessons, offer different roles and difficulty levels for a shared learning goal."
+    - "Introduce or develop no more than two focus areas per lesson."
+    - "Vary the games and do not immediately repeat the most recently used game mechanic."
+modules:
+  - id: m1
+    title: First Steps - Quick Start
+    goal: Become familiar with the guitar, produce clear notes, and play a first riff
+    skills:
+      - id: m1_haltung
+        title: Guitar posture and hand position
+        prerequisites: []
+        mastery: "Sits or stands steadily without keeping the wrists bent awkwardly."
+        activities: ["Posture Detective", "Short check-ins between song sections"]
+      - id: m1_stimmen
+        title: Tuning with a tuner or app
+        prerequisites: [m1_haltung]
+        mastery: "Checks all six strings with support and independently retunes one string."
+        activities: ["Pre-play tuning check", "Which string sounds out of tune?"]
+      - id: m1_saitennamen
+        title: Open strings and their names
+        prerequisites: [m1_haltung]
+        mastery: "Correctly identifies at least five of the six string names."
+        activities: ["String Bingo", "String Memory"]
+      - id: m1_wechselschlag
+        title: Clean alternate picking on open strings
+        prerequisites: [m1_haltung]
+        mastery: "Plays eight even strokes without unintentionally hitting other strings."
+        activities: ["Rhythm Echo", "Alternate-picking call and response"]
+      - id: m1_einfache_akkorde
+        title: Simplified one- to three-finger chords (G, C, Em)
+        prerequisites: [m1_haltung]
+        mastery: "Fingers two simplified chords with mostly clear-sounding notes."
+        activities: ["Chord Traffic Light", "Chord Riddle"]
+      - id: m1_erster_riff
+        title: First simple pop riff or two-chord song
+        prerequisites: [m1_wechselschlag]
+        mastery: "Plays a short recognizable phrase twice in succession while keeping the pulse."
+        activities: ["Riff Echo", "Mini Stage Performance"]
+  - id: m2
+    title: Chord Heroes and Rhythm Skills
+    goal: Fluent chord changes and accompaniment for simple songs
+    skills:
+      - id: m2_em
+        title: Open Em chord
+        prerequisites: [m1_haltung]
+        mastery: "Fingers Em cleanly in four out of five attempts without a long search."
+        activities: ["Chord Flash", "Two-bar Accompaniment"]
+      - id: m2_am
+        title: Open Am chord
+        prerequisites: [m1_haltung]
+        mastery: "Fingers Am with mostly clear notes in four out of five attempts."
+        activities: ["Chord Flash", "Mini Loop"]
+      - id: m2_c
+        title: Open C major chord
+        prerequisites: [m1_haltung]
+        mastery: "Fingers C major with mostly clear notes in four out of five attempts."
+        activities: ["String Check", "Chord Puzzle"]
+      - id: m2_g
+        title: Open G major chord
+        prerequisites: [m1_haltung]
+        mastery: "Fingers G major with mostly clear notes in four out of five attempts."
+        activities: ["String Check", "Rhythmic Chord Call"]
+      - id: m2_d
+        title: Open D major chord
+        prerequisites: [m1_haltung]
+        mastery: "Fingers D major with mostly clear notes in four out of five attempts."
+        activities: ["String Check", "Chord Flash"]
+      - id: m2_a
+        title: Open A major chord (extension for existing songs)
+        prerequisites: [m1_haltung]
+        optional: true
+        mastery: "Fingers A major with mostly clear notes in four out of five attempts."
+        activities: ["Chord Flash", "Calypso Accompaniment"]
+      - id: m2_viertel
+        title: Downstrokes in a quarter-note pulse
+        prerequisites: [m1_wechselschlag]
+        mastery: "Plays eight even quarter-note downstrokes with a steady slow pulse."
+        activities: ["Pulse Relay", "Stop and Start"]
+      - id: m2_achtel
+        title: Upstrokes and eighth-note rhythm
+        prerequisites: [m2_viertel]
+        mastery: "Plays two bars of down- and upstrokes with a stable basic pulse."
+        activities: ["Rhythm Echo", "Changing Conductors"]
+      - id: m2_tabs
+        title: Reading simple tablature
+        prerequisites: [m1_saitennamen]
+        mastery: "Correctly plays a short tablature passage containing at least four notes."
+        activities: ["Tab Detective", "Secret Riff Code"]
+      - id: m2_dg_wechsel
+        title: Fluent changes between D major and G major
+        prerequisites: [m2_d, m2_g]
+        mastery: "Completes six of eight D-to-G changes at the agreed tempo without completely losing the pulse."
+        activities: ["Chord Orchestra", "Duet Change Challenge"]
+      - id: m2_song
+        title: Accompanying a simple song with open chords
+        prerequisites: [m2_viertel, m2_d, m2_g]
+        mastery: "Accompanies at least one verse with a recognizable pulse and only brief interruptions."
+        activities: ["Band Rehearsal with Changing Roles", "Mini Performance"]
+  - id: m3
+    title: Melodies, Riffs, and Dexterity
+    goal: Independent fretting-hand control and first single-note lines
+    skills:
+      - id: m3_riffs
+        title: Simple familiar single-note riffs
+        prerequisites: [m1_erster_riff]
+        mastery: "Plays a multi-note riff recognizably twice with a reasonably even pulse."
+        activities: ["Guess the Riff", "Riff Dialogue"]
+      - id: m3_spinne
+        title: Spider exercise for finger coordination
+        prerequisites: [m1_haltung]
+        mastery: "Plays a short 1-2-3-4 sequence with control and without pain."
+        activities: ["Finger Maze", "Slow and Clean Challenge"]
+      - id: m3_pentatonik
+        title: First pentatonic fretboard pattern
+        prerequisites: [m3_spinne]
+        mastery: "Finds and calmly plays an agreed pentatonic position up and down."
+        activities: ["Scale Puzzle", "Question-and-Answer Melody"]
+      - id: m3_lagerfeuer
+        title: Campfire strumming pattern
+        prerequisites: [m2_achtel]
+        mastery: "Plays the agreed strumming pattern for four bars with a stable basic pulse."
+        activities: ["Rhythm Construction Kit", "Accompany a Favorite Song"]
+  - id: m4
+    title: Band Ready and Power Chords
+    goal: Dynamic rock/pop sound, creativity, and ensemble playing
+    skills:
+      - id: m4_powerchords
+        title: Movable two-finger power chords
+        prerequisites: [m3_spinne]
+        mastery: "Cleanly plays two power-chord positions with controlled changes."
+        activities: ["Rock Riff Construction Kit", "Band Roles"]
+      - id: m4_hammer_pull
+        title: First hammer-ons and pull-offs
+        prerequisites: [m3_spinne]
+        mastery: "Produces one recognizable hammer-on and pull-off in a slow exercise."
+        activities: ["Sound Detective", "Embellished Mini Riff"]
+      - id: m4_palm_muting
+        title: Palm muting as articulation
+        prerequisites: [m2_viertel]
+        mastery: "Deliberately switches between open and muted strokes."
+        activities: ["Sound Director", "Rock Beat"]
+      - id: m4_impro
+        title: Creating a melody over a backing track
+        prerequisites: [m3_pentatonik]
+        mastery: "Creates a short coherent phrase using notes from the pentatonic scale."
+        activities: ["Question-and-Answer Improvisation", "Melody Dice"]
+      - id: m4_song_komplett
+        title: Accompanying a complete song with the original recording
+        prerequisites: [m2_song]
+        mastery: "Plays through an agreed song at a suitable tempo with only a few interruptions."
+        activities: ["Band Dress Rehearsal", "Final Concert"]

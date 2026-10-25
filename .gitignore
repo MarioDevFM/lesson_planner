@@ -34,6 +34,8 @@ token*.json
 # Unterrichtsinhalte und generierte Ergebnisse
 data/*
 !data/example_history.txt
+!data/curriculum.yaml
+!data/gitarrenspiele.yaml
 !data/plans/
 data/plans/*
 !data/plans/.gitkeep
