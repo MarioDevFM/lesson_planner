@@ -32,7 +32,6 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
-
 #TODO: Human in the loop: add ad stetp to ask the user create a new lession plan with "Does this lesson plan look good to you? (y/n)" and if the user says no, then ask "What would you like to change?" and then use that input to create a new lesson plan.
 # source: https://academy.langchain.com/courses/take/foundation-introduction-to-deepagents/multimedia/76263203-lesson-8-hitl
 

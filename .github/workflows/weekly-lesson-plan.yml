@@ -42,22 +42,16 @@ jobs:
         shell: bash
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
-          GOOGLE_CALENDAR_EVENT_ID: ${{ secrets.GOOGLE_CALENDAR_EVENT_ID }}
-          GOOGLE_CALENDAR_REFRESH_TOKEN: ${{ secrets.GOOGLE_CALENDAR_REFRESH_TOKEN }}
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
           MAIL: ${{ secrets.MAIL }}
           MAIL_PW: ${{ secrets.MAIL_PW }}
           RECEIVER_MAIL: ${{ secrets.RECEIVER_MAIL }}
         run: |
           required=(
             OPENAI_API_KEY
-            GOOGLE_CALENDAR_ID
-            GOOGLE_CALENDAR_EVENT_ID
-            GOOGLE_CALENDAR_REFRESH_TOKEN
-            GOOGLE_CLIENT_ID
-            GOOGLE_CLIENT_SECRET
+            NOTION_TOKEN
+            NOTION_PAGE_ID
             MAIL
             MAIL_PW
             RECEIVER_MAIL
@@ -72,11 +66,8 @@ jobs:
       - name: Run lesson planner
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
-          GOOGLE_CALENDAR_EVENT_ID: ${{ secrets.GOOGLE_CALENDAR_EVENT_ID }}
-          GOOGLE_CALENDAR_REFRESH_TOKEN: ${{ secrets.GOOGLE_CALENDAR_REFRESH_TOKEN }}
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
           MAIL: ${{ secrets.MAIL }}
           MAIL_PW: ${{ secrets.MAIL_PW }}
           RECEIVER_MAIL: ${{ secrets.RECEIVER_MAIL }}
